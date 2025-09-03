@@ -1,0 +1,25 @@
+body {
+    background-color: lightblue;
+    text-align: center;
+    
+}
+ul{
+    text-decoration: none;
+    list-style: none;
+   
+}
+ul li{
+    display: inline-block; 
+    margin: 0 15px;         
+}
+
+#header{
+    background-color: lightcyan;
+    border-radius: 5%;
+    text-align: center;
+}
+
+#header a{
+    text-decoration: none;
+    color: black;
+}
