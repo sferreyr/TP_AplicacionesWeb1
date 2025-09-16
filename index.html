@@ -4,35 +4,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <LINK REL="stylesheet" TYPE="text/css" HREF="./css/estilo.css">
-    <title>Aplicación Ecommerce Productos para mascotas</title>
+    <LINK REL="stylesheet" TYPE="text/css" HREF="./assets/css/estilo.css">
+    <title>La Tienda de Mishi - Aplicación Ecommerce Productos para mascotas</title>
 </head>
 
 <body>
     <div id="header">
-        <img src="logo.png" height="100px" width="100px" alt="Logo de la empresa">
+        <a href="index.html"><img src="logo.png" height="150px" width="250px" alt="Logo"> </a>
         <br>
         <ul>
-            <li> <a href "#">Inicio</a></li>
-            <li> <a href "#">Productos</a></li>
-            <li> <a href "#">Logout</a></li>
+            <li> <a href="index.html">Inicio</a></li>
+            <li> <a href="#">Productos</a></li>
+            <li> <a href="./pages/login.html">Ingresar</a></li>
+            <li> <a href="#">Logout</a></li>
         </ul>
     </div>
     <div id="subheader">
         <ul>
             <li> <a href "#">Alimentos </a></li>
+            -
             <li><a href "#">Juguetes </a></li>
+            -
             <li> <a href "#">Accesorios </a></li>
         </ul>
     </div>
 
-    <h1>Bienvenido a la tienda de productos para mascotas</h1>
+    <h1>Bienvenido a la tienda de productos para mascotas "La Tienda de Mishi"</h1>
     <p>Encuentra todo lo que necesitas para el cuidado y bienestar de tus mascotas.</p>
     <h2>Productos Destacados</h2>
 
-    <footer>
-        <p>2025 Tienda de Mascotas.</p>
-    </footer>
+
+    <!--https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Grids-->
+    <div class="grid-productos">
+        <div class="card-productos">
+            <img src="./assets/img/alimentoperro.webp" alt="Producto 1" width="200" height="200">
+            <h3>Alimento para Perros Raza</h3>
+            <p>Alimento para Perros Raza de 15 Kg</p>
+            <p>$200.00</p>
+            <button>Añadir al Carrito</button>
+        </div>
+        <br>
+        <div class="card-productos">
+            <img src="./assets/img/juguete_perro.webp" alt="Producto 1" width="200" height="200">
+            <h3>Juguete Perro</h3>
+            <p>Juguete de perro Dental Rellenable 9,5 X 5cm</p>
+            <p>$250.00</p>
+            <button>Añadir al Carrito</button>
+        </div>
+        <br>
+        <div class="card-productos">
+            <img src="./assets/img/hierbagatera.png" alt="Producto 1" width="200" height="200">
+            <h3>Juguete Gato</h3>
+            <p>Juguete Para Gato con Hierba Gatera</p>
+            <p>$210.00</p>
+            <button>Añadir al Carrito</button>
+        </div>
+
+        <br>
+        <div class="card-productos">
+            <img src="./assets/img/alimentogato.webp" alt="Producto 1" width="200" height="200">
+            <h3>Alimento para Gatos Excellent</h3>
+            <p>Alimento balanceado completo para gatos adultos de todas las razas. 15Kg - Excellent</p>
+            <p>$200.00</p>
+            <button>Añadir al Carrito</button>
+        </div>
+
+
+
+
+        <footer>
+            <p>2025 La Tienda de Mishi.</p>
+        </footer>
 </body>
 
 </html>
