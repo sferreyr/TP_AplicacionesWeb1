@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Implementacion de Boostrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="../../assets/css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>La Tienda de Mishi - Aplicación Ecommerce Productos para mascotas</title>
+</head>
+
+<body class="bg-light">
+    <div id="header" class="mb-4">
+        <a href="../../index.html"> <img src="../../logo.png" height="150px" width="250px" alt="Logo"> </a>
+        <br>
+        <nav class="navbar navbar-expand-lg  rounded"
+            style=" background-color: #ddf1f2; border-bottom: 1px solid #5cc9a3; border-top: 1px solid #5cc9a3;">
+            <div class=" container-fluid">
+                <!-- <a class="navbar-brand" href="#">La Tienda de Mishi</a> !-->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll"
+                    aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                     <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../index.html"><i class="fa-solid fa-home text-success"></i>
+                                Inicio</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../sobrenosotros.html"> <i
+                                    class="fa-solid fa-people-group text-success"></i>
+                                Sobre nosotros</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid  fa-box-open text-success"></i>
+                                Productos
+                            </a>
+                           <ul class="dropdown-menu" style="background-color: #ddf1f2;">
+                                <li><a class="dropdown-item" href="/pages/productos/alimentos.html"><i class="fa-solid fa-bowl-food"></i>
+                                        Alimentos</a></li>
+                                <li><a class="dropdown-item" href="/pages/productos/juguetes.html"><i class="fa-solid fa-baseball"></i>Juguetes</a>
+                                </li>
+                                <li><a class="dropdown-item" href="/pages/productos/accesorios.html"><i class="fa-solid fa-bone"></i>Accesorios</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-screwdriver-wrench text-success"></i> Servicios
+                            </a>
+                            <ul class="dropdown-menu" style="background-color: #ddf1f2;">
+                                <li><a class="dropdown-item" href="/pages/servicios/peluqueria.html"><i class="fa-solid fa-soap"></i> Peluqueria</a>
+                                </li>
+                                <li><a class="dropdown-item" href="/pages/servicios/paseos.html"><i
+                                            class="fa-solid fa-person-walking"></i>Paseos</a></li>
+                                <li><a class="dropdown-item" href="/pages/servicios/cuidados.html"><i class="fa-solid fa-heart"></i>Cuidado</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="d-flex me-3" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar productos"
+                            aria-label="Buscar">
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
+                    </form>
+                   <div class="dropdown me-3">
+                        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <i class="fa-solid fa-user-circle"></i>
+                            Mi Cuenta
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="../../pages/login.html">
+                                    <i class="fa-solid fa-right-to-bracket me-2"></i> Ingresar
+                                </a></li>
+                            <li><a class="dropdown-item" href="../../pages/registro.html">
+                                    <i class="fa-solid fa-user-plus me-2"></i> Registrarse
+                                </a></li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <div class="py-4 text-center text-white  border rounded mb-4 "
+            style="background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);">
+            <h1 class="fw-bold mb-2 text-secondary"">Cuidados</span> <i
+                    class=" fa-solid fa-heart"></i></h1>
+
+        </div>
+
+
+    </div>
+
+    <footer class="py-4 border-top border-success mt-4">
+
+            <div class="container">
+                <div class="row text-center text-md-start">
+
+                    <div class="col-md-3 mb-3">
+                        <a href="../../index.html"> <img src="../../logo.png" height="150px" width="250px" alt="Logo"> </a>
+                        <p class="text-muted small">Todo para tu mascota en un solo lugar.</p>
+                    </div>
+
+
+                    <div class="col-md-3 mb-3">
+                        <h6 class="fw-bold">Inicio</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="../../index.html" class="nav-link px-0 text-muted">Inicio</a></li>
+                            <li class="nav-item"><a href="../../pages/sobrenosotros.html"
+                                    class="nav-link px-0 text-muted">Sobre nosotros</a></li>
+                            <li class="nav-item"><a href="../../pages/contacto.html"
+                                    class="nav-link px-0 text-muted">Contactanos</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-md-3 mb-3">
+                        <h6 class="fw-bold">Productos</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="../../pages/productos/alimentos.html"
+                                    class="nav-link px-0 text-muted">Alimentos</a></li>
+                            <li class="nav-item"><a href="../../pages/productos/accesorios.html"
+                                    class="nav-link px-0 text-muted">Accesorios</a></li>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-md-3 mb-3">
+                        <h6 class="fw-bold">Servicios</h6>
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="../../pages/servicios/peluqueria.html"
+                                    class="nav-link px-0 text-muted">Peluqueria</a></li>
+                            <li class="nav-item"><a href="../../pages/servicios/paseos.html"
+                                    class="nav-link px-0 text-muted">Paseos</a></li>
+                            <li class="nav-item"><a href="../../pages/servicios/cuidados.html"
+                                    class="nav-link px-0 text-muted">Cuidados</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center mt-3">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Mercado_Pago.svg" alt="Mercado Pago"
+                        height="64" class="mx-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard"
+                        height="32" class="mx-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa" height="32"
+                        class="mx-2">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" height="32"
+                        class="mx-2">
+                </div>
+
+                <hr class="border-success opacity-50">
+                <p class="text-center text-muted mb-0">© 2025 La Tienda de Mishi</p>
+            </div>
+
+        </footer>
+        <!-- Boton de volver arriba -->
+        <a href="#" class="btn btn-primary position-fixed bottom-0 end-0 m-4">
+            <i class="fa fa-arrow-up"></i>
+        </a>
+
+                <!-- Implemenacion de Boostrap 5 Javascript-->
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                    crossorigin="anonymous"></script>
+</body>
+
+</html>

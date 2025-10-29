@@ -1,10 +1,11 @@
-@import url('https://api.fontshare.com/css?f%5B%5D=clash-display@400,700&display=swap');
+@import url('https://api.fontshare.com/css?f%5B%5D=zodiak@400,700&display=swap');
 
 body {
     text-align: center;
     font-family: sans-serif;
    /* background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);*/
-
+         font-family: sans-serif;
+         background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
 }
 
 ul {
@@ -32,7 +33,14 @@ ul {
 
 /* Hover sirve para resaltar al pasar mouse por encima*/
 #header ul li:hover {
-    background-color: rgb(118, 172, 50);
+    background-color: #97bbe8;
+        border-radius: 8px;
+}
+
+
+.dropdown-menu :hover{
+     background-color: #97bbe8;
+     border-radius: 8px;
 }
 
 #header a {
@@ -48,54 +56,12 @@ footer {
     text-align: center;
 }
 
-
-/*Productos cards*/
-.grid-productos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-    /*Dejo las cards  centradas*/
-    padding: 20px;
-
+footer a:hover {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
 
-.card-productos {
-    background: #fff;
-    border-radius: 10px;
-    padding: 15px;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.card-productos img {
-    width: 100%;
-    height: 150px;
-    border-radius: 8px;
-    object-fit: contain;
-    /*https://developer.mozilla.org/es/docs/Web/CSS/object-fit*/
 
 
-}
 
-.card-productos h3 {
-    margin: 10px 0 5px;
-    font-size: 1rem;
-}
-
-.card-productos p {
-    margin: 4px 0;
-    font-size: 0.9rem;
-    color: #444;
-}
-
-.card-productos button {
-    margin-top: 10px;
-    padding: 8px 12px;
-    border: none;
-    border-radius: 8px;
-    background: #76ac32;
-    color: #fff;
-    cursor: pointer;
-}

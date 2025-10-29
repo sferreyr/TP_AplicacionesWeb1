@@ -69,6 +69,14 @@
 
      }
 
+     /* Carousel imagen regulada */
+     .carousel-item img {
+         height: 500px;
+         width: 100%;
+  object-fit: cover;          /* Recorta la imagen sin deformarla */
+  object-position: center;    /* Centra el recorte */
+     }
+
      /* footer siempre abajo */
      footer {
          margin-top: auto;
