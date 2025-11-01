@@ -48,6 +48,13 @@ ul {
     color: black;
 }
 
+.card-title {
+  min-height: 50px; /*Tamaño minimo del titulo de los cards*/
+}
+.card-text {
+  min-height: 40px; /*Tamaño minimo del texto de los cards*/
+}
+
 
 /* footer siempre abajo */
 footer {
@@ -60,6 +67,11 @@ footer a:hover {
     text-decoration: none;
     color: black;
     font-weight: bold;
+}
+
+.footer-logo{
+    max-width: 150px;
+    height: auto;
 }
 
 
