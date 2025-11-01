@@ -53,6 +53,7 @@ ul {
 }
 .card-text {
   min-height: 40px; /*Tamaño minimo del texto de los cards*/
+  max-height: 40px;
 }
 
 
