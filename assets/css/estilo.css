@@ -14,7 +14,7 @@ ul {
 
 }
 
-#header {
+header {
     border-radius: 5%;
     text-align: center;
     padding: 5px;
@@ -22,7 +22,7 @@ ul {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-#header ul li {
+header ul li {
     display: inline-block;
     margin: 0 15px;
     border: none;
@@ -32,7 +32,7 @@ ul {
 }
 
 /* Hover sirve para resaltar al pasar mouse por encima*/
-#header ul li:hover {
+header ul li:hover {
     background-color: #97bbe8;
         border-radius: 8px;
 }
@@ -43,7 +43,7 @@ ul {
      border-radius: 8px;
 }
 
-#header a {
+header a {
     text-decoration: none;
     color: black;
 }
