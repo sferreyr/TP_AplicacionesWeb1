@@ -78,10 +78,10 @@ const navBar = `
                                 Mi Cuenta
                             </button>
                             <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="./pages/login.html">
+                                <li><a class="dropdown-item" href="/pages/auth/login.html">
                                         <i class="fa-solid fa-right-to-bracket me-2"></i> Ingresar
                                     </a></li>
-                                <li><a class="dropdown-item" href="./pages/registro.html">
+                                <li><a class="dropdown-item" href="/pages/signin/registro.html">
                                         <i class="fa-solid fa-user-plus me-2"></i> Registrarse
                                     </a></li>
                             </ul>
@@ -94,6 +94,8 @@ const navBar = `
 
 
 `
+
+
 
 
 let navContainer = document.querySelector('header');
