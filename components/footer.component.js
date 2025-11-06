@@ -1,6 +1,6 @@
 
 
-const footer = `
+export const footerComponent = `
         <div class="container">
             <div class="row text-center text-md-start">
 
@@ -64,9 +64,4 @@ const footer = `
 
 
 `
-let footerContainer = document.querySelector('footer');
 
-
-window.addEventListener('load', () => {
-    footerContainer.innerHTML = footer; // remplaza footer
-});

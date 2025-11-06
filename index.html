@@ -117,99 +117,7 @@
 
         <!--https://developer.mozilla.org/es/docs/Learn_web_development/Core/CSS_layout/Grids-->
         <div class="container text-center">
-            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
-                <div class="col" data-nombre="Alimento para Perros Raza">
-                    <div class="card h-100 text-center shadow border position-relative">
-                        <span class="badge text-bg-primary text-warning"
-                            style="position:absolute; margin-top:5px; margin-left: 5px">Nuevo</span>
-                        <img src="./assets/img/alimentoperro.webp" alt="Producto 1" class="card-img-top img-fluid p-3"
-                            style="height:200px; object-fit:contain;">
-                        <div class="card-body">
-                            <h5 class="card-title text-success" style="font-weight:bold">Alimento para Perros Raza</h5>
-                            <p class="card-text text-secondary descripcion">Alimento para Perros Raza de 15 Kg.</p>
-                            <p class="card-text precio">$200.00</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <button class="btn btn-outline-secondary btn-sm btn_restar">-</button>
-                                <span class="align-self-center cantidad">1</span>
-                                <button class="btn btn-outline-secondary btn-sm btn_sumar">+</button>
-                            </div>
-
-                            <button class="btn btn-outline-info w-100 mt-auto mb-2 btnAgregarCarrito">Añadir al
-                                carrito</button>
-
-                            <button id="btnComprarAhora" class="btn btn-outline-info w-100 mt-auto">Comprar
-                                ahora</button>
-
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col">
-                    <div class="card h-100 text-center shadow border position-relative" style="text-align: center;">
-                        <img src="./assets/img/juguete_perro.webp" alt="Producto 2" width="200" height="200"
-                            style="margin: auto; padding-top: 10px;">
-                        <div class="card-body">
-                            <h5 class="card-title text-success" style="font-weight:bold">Juguete Perro</h5>
-                            <p class="card-text text-secondary">Juguete de perro Dental Rellenable 9,5 X 5cm.</p>
-                            <p class="card-text">$250.00</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <button class="btn btn-outline-secondary btn-sm">-</button>
-                                <span class="align-self-center">1</span>
-                                <button class="btn btn-outline-secondary btn-sm">+</button>
-                            </div>
-
-                            <button class="btn btn-outline-info w-100 mt-auto mb-2">Añadir al carrito</button>
-
-                            <button class="btn btn-outline-info w-100 mt-auto">Comprar ahora</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 text-center shadow border position-relative" style="text-align: center;">
-                        <img src="./assets/img/hierbagatera.png" alt="Producto 3" width="200" height="200"
-                            style="margin: auto; padding-top: 10px;">
-                        <div class="card-body">
-                            <h5 class="card-title text-success" style="font-weight:bold">Juguete Gato</h5>
-                            <p class="card-text text-secondary">Juguete Para Gato con Hierba Gatera.</p>
-                            <p class="card-text">$210.00</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <button class="btn btn-outline-secondary btn-sm">-</button>
-                                <span class="align-self-center">1</span>
-                                <button class="btn btn-outline-secondary btn-sm">+</button>
-                            </div>
-
-                            <button class="btn btn-outline-info w-100 mt-auto mb-2">Añadir al carrito</button>
-
-                            <button class="btn btn-outline-info w-100 mt-auto">Comprar ahora</button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col">
-                    <div class="card h-100 text-center shadow border position-relative" style="text-align: center; ">
-                        <img src="./assets/img/alimentogato.webp" alt="Producto 4" width="200" height="200"
-                            style="margin: auto; padding-top: 10px;">
-                        <div class="card-body">
-                            <h5 class="card-title text-success" style="font-weight:bold">Alimento para Gatos Excellent
-                            </h5>
-                            <p class="card-text text-secondary">Alimento balanceado para gatos adultos
-                                15Kg</p>
-                            <p class="card-text">$200.00</p>
-                            <div class="d-flex justify-content-between mb-3">
-                                <button class="btn btn-outline-secondary btn-sm">-</button>
-                                <span class="align-self-center">1</span>
-                                <button class="btn btn-outline-secondary btn-sm">+</button>
-                            </div>
-
-                            <button class="btn btn-outline-info w-100 mt-auto mb-2">Añadir al carrito</button>
-
-                            <button class="btn btn-outline-info w-100 mt-auto">Comprar ahora</button>
-                        </div>
-                    </div>
-                </div>
-
+            <div  id="cardContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
 
             </div>
         </div>
@@ -224,10 +132,10 @@
     <a href="#" class="btn btn-primary position-fixed bottom-0 end-0 m-4">
         <i class="fa fa-arrow-up"></i>
     </a>
-    <!-- Script  navbar-->
-    <script src="/components/navbar.component.js"></script>
-        <!-- Script  footer-->
-    <script src="/components/footer.component.js"></script>
+
+    <!-- Scripts-->
+    <script type="module" src="/index.js"></script>
+
     
 
     <!-- Implemenacion de Boostrap 5 Javascript-->

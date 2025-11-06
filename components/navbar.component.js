@@ -21,7 +21,7 @@ const navElements = [
 
 let pageName = document.getElementById('pageName').value; // obtenemos el valor de la pagina actual
 
-const navBar = `
+export const navBarComponent = `
 
             <a href="index.html"> <img src="/logo.png" height="150px" width="250px" alt="Logo"> </a>
             <br>
@@ -95,12 +95,3 @@ const navBar = `
 
 `
 
-
-
-
-let navContainer = document.querySelector('header');
-
-
-window.addEventListener('load', () => {
-    navContainer.innerHTML = navBar; // remplaza dentro del header el navBar
-});

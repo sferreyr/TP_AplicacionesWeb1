@@ -14,21 +14,21 @@
 </head>
 
 <body>
-
+    <input type="hidden" id="pageName" value="login">
     <div class="login">
         <a href="/index.html"><img src="/logo.png" height="150px" width="250px" alt="Logo" class="mb-4"> </a>
         <br>
         <h4 class="text-bg-secondary rounded m-2 shadow">Ingresar</h4>
 
-        <form action="/index.html" class="shadow-lg p-4 rounded bg-white mb-3">
+        <form id="loginForm" action="/index.html" class="shadow-lg p-4 rounded bg-white mb-3">
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
                 <input type="text" id="email" name="email" class="form-control" required>
             </div>
 
             <div class="mb-3">
-                <label for="contrasenia" class="form-label">Contraseña</label>
-                <input type="password" id="contrasenia" name="contrasenia" class="form-control" required>
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" id="password" name="password" class="form-control" required>
             </div>
 
             <button type="submit" class="btn btn-success w-100 mb-2"> Ingresar</button>
@@ -46,15 +46,16 @@
 
     <footer class="py-4 border-top border-success mt-4">
 
-
     </footer>
     <!-- Boton de volver arriba -->
     <a href="#" class="btn btn-primary position-fixed bottom-0 end-0 m-4">
         <i class="fa fa-arrow-up"></i>
     </a>
 
-    <!-- Script  footer-->
-    <script src="/components/footer.component.js"></script>
+    <!-- Script  login-->
+    <script src="./login.controller.js"></script>
+    <!-- Scripts-->
+    <script type="module" src="/index.js"></script>
 </body>
 
 </html>
