@@ -17,11 +17,11 @@
         
     <input type="hidden" id="pageName" value="Registro">
     
-    <div class="login">
+    <div class="register">
         <a href="index.html"><img src="/logo.png" height="150px" width="250px" alt="Logo" class="mb-4"> </a>
         <br>
         <h4 class="text-bg-secondary rounded m-2 shadow">Registrarse</h4>
-        <form action="/index.html" class="shadow-lg p-4 rounded bg-white mb-3">
+        <form  id="registerForm" action="/index.html" class="shadow-lg p-4 rounded bg-white mb-3">
 
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
@@ -29,8 +29,8 @@
             </div>
 
             <div class="mb-3">
-                <label for="contrasenia" class="form-label">Contraseña</label>
-                <input type="password" id="contrasenia" name="contrasenia" class="form-control" required>
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" id="password" name="password" class="form-control" required>
             </div>
 
             <div class="mb-3">
@@ -68,6 +68,9 @@
 
     </footer>
 
+    
+    <!-- Script  login-->
+    <script type="module" src="./signin.controller.js"></script>
      <!-- Scripts-->
     <script type="module" src="/index.js"></script>
     

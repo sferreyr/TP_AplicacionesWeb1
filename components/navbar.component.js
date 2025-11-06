@@ -1,4 +1,18 @@
 
+import { getUserData, Logout } from "../utils/SessionStorageController.js";
+
+//variable para chequear inicio de sesion
+let isloggedIn = false;
+
+let emailUser = "";
+
+if (getUserData('UserData')) {
+    console.log("Usuario logueado: " + getUserData('UserData').email);
+    emailUser = getUserData('UserData').email;
+
+    isloggedIn = true;
+}
+
 const navElements = [
     { name: 'Inicio', link: '/index.html', icon: 'fa-home' },
     { name: 'Sobre nosotros', link: '/pages/sobrenosotros.html', icon: 'fa-people-group' },
@@ -39,7 +53,7 @@ export const navBarComponent = `
                    
                    
                         ${navElements.map(e => {
-                        return `
+    return `
                                                 
                     <li class="nav-item ${e.dropdown ? 'dropdown' : ''}">
                         
@@ -59,10 +73,8 @@ export const navBarComponent = `
                             ` : ''}
                         </li>
                         `
-                    }).join('')
-                        }
-
-
+}).join('')
+    }
 
                         </ul>
                         <form class="d-flex me-3" role="search">
@@ -71,27 +83,42 @@ export const navBarComponent = `
                             <button class="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
 
+                      ${isloggedIn ? `
                         <div class="dropdown me-3">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                <i class="fa-solid fa-user-circle"></i>
+                                 ${emailUser}
+                            </button>
+
+    <ul class="dropdown-menu dropdown-menu-end">
+     
+      <li><a class="dropdown-item" href="#" id="logoutBtn">
+        <i class="fa-solid fa-right-from-bracket me-2"></i> Cerrar sesión
+      </a></li>
+    </ul>
+  ` : `
+    <div class="dropdown me-3">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <i class="fa-solid fa-user-circle"></i>
                                 Mi Cuenta
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="/pages/auth/login.html">
-                                        <i class="fa-solid fa-right-to-bracket me-2"></i> Ingresar
-                                    </a></li>
-                                <li><a class="dropdown-item" href="/pages/signin/registro.html">
-                                        <i class="fa-solid fa-user-plus me-2"></i> Registrarse
-                                    </a></li>
-                            </ul>
-
-                        </div>
-
-
-                    </div>
-            </nav>
+    <ul class="dropdown-menu dropdown-menu-end">
+      <li><a class="dropdown-item" href="/pages/auth/login.html">
+        <i class="fa-solid fa-right-to-bracket me-2"></i> Ingresar
+      </a></li>
+      <li><a class="dropdown-item" href="/pages/signin/registro.html">
+        <i class="fa-solid fa-user-plus me-2"></i> Registrarse
+      </a></li>
+    </ul>
+  `}
+                        </div >
 
 
-`
+                    </div >
+            </nav >
+
+
+    `
 
