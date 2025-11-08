@@ -1,6 +1,7 @@
 
-import { getUserData, Logout } from "../utils/SessionStorageController.js";
+import { getUserData, Logout, getCarrito } from "../utils/SessionStorageController.js";
 
+let cantidadCarrito = 0;
 //variable para chequear inicio de sesion
 let isloggedIn = false;
 
@@ -12,6 +13,9 @@ if (getUserData('UserData')) {
 
     isloggedIn = true;
 }
+
+
+
 
 const navElements = [
     { name: 'Inicio', link: '/index.html', icon: 'fa-home' },
@@ -84,7 +88,16 @@ export const navBarComponent = `
                         </form>
 
                       ${isloggedIn ? `
-                        <div class="dropdown me-3">
+
+                        <ul>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="fa-solid fa fa-shopping-cart"></i>  Carrito
+                             </a>
+                             <span class="badge bg-secondary carritoCantidad">${cantidadCarrito}0</span>
+                         </li>
+                         </ul>         
+                                               <div class="dropdown me-3">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                                 <i class="fa-solid fa-user-circle"></i>

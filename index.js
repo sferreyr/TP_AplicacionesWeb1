@@ -2,9 +2,11 @@
 import { navBarComponent } from "./components/navbar.component.js";
 import { footerComponent } from "./components/footer.component.js";
 import { cardComponent } from "./components/cards.component.js";
-import { getUserData, Logout } from "../utils/SessionStorageController.js";
+import { getUserData, Logout, getCarrito } from "./utils/SessionStorageController.js";
+import { AgregarProductoCarrito, IncrementarProductoCantidad, RestarProductoCantidad} from "./utils/CarritoController.js"; 
 
 
+let carrito = [];
 //variable para chequear inicio de sesion
 let isloggedIn = false;
 
@@ -38,16 +40,34 @@ window.addEventListener('load', () => {
         let cardContainer = document.getElementById('cardContainer');
 
         const products = [
-            { img: './assets/img/alimentoperro.webp', title: 'Alimento para Perros', description: 'Alimento balanceado para perros de todas las edades.', price: '$200.00' },
-            { img: './assets/img/juguete_perro.webp', title: 'Juguete Perro', description: 'Juguete de perro Dental Rellenable 9,5 X 5cm.', price: '$250.00' },
-            { img: './assets/img/hierbagatera.png', title: 'Juguete Gato', description: 'Juguete Para Gato con Hierba Gatera.', price: '$210.00' },
-            { img: './assets/img/alimentogato.webp', title: 'Alimento para Gatos Excellent', description: 'Alimento balanceado para gatos adultos 15Kg', price: '$200.00' }
+            { img: './assets/img/alimentoperro.webp', title: 'Alimento para Perros', description: 'Alimento balanceado para perros de todas las edades.', price: '$200.00', quantity: 0 },
+            { img: './assets/img/juguete_perro.webp', title: 'Juguete Perro', description: 'Juguete de perro Dental Rellenable 9,5 X 5cm.', price: '$250.00',quantity: 0},
+            { img: './assets/img/hierbagatera.png', title: 'Juguete Gato', description: 'Juguete Para Gato con Hierba Gatera.', price: '$210.00', quantity: 0 },
+            { img: './assets/img/alimentogato.webp', title: 'Alimento para Gatos Excellent', description: 'Alimento balanceado para gatos adultos 15Kg', price: '$200.00', quantity: 0 }
         ];
 
 
+        // Renderizamos/hacemos aparecer las cards de productos
         cardContainer.innerHTML = products.map(p =>
-            cardComponent(p.img, p.title, p.description, p.price)
+            cardComponent(p.img, p.title, p.description, p.price, p.quantity)
         ).join('');
+
+
+        //Comprobamos carrito en sessionStorage
+        const obtenerCarrito = getCarrito();
+        if (obtenerCarrito) {
+          //ObtenerCantidadesCarrito(); // Actualizamos las cantidades en la interfaz
+
+            console.log("Carrito cargado desde sessionStorage:", carrito);
+        }
+        
+        // Activar botones "Agregar al carrito"
+        AgregarProductoCarrito(products);
+        
+        IncrementarProductoCantidad(products);
+        RestarProductoCantidad(products);
+
+
 
     };
 
@@ -66,6 +86,14 @@ window.addEventListener('load', () => {
         }
     }
 
+
+
+
+
+    
 }
 
 );
+
+
+

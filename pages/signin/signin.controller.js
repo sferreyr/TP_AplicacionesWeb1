@@ -1,4 +1,5 @@
 import { setUserData, getUserData } from '../../utils/SessionStorageController.js';
+import { MsgAlerta } from '../../utils/AlertController.js';
 
 
 
@@ -24,10 +25,14 @@ registerForm.addEventListener('submit', function (event) {
     let frmFechaNacimiento = document.getElementById('fechaNacimiento').value;
     let frmDomicilio = document.getElementById('domicilio').value;
 
-    alert("Cuenta creada correctamente, seras redirigido al inicio ");
+    
 
     //Guardamos la sesion del usuario en sessionStorage, enviamos la KEY los VALUE con datos del usuario
     setUserData('UserData', { email: frmEmail, name: frmNombre, apellido: frmApellido, fechaNacimiento: frmFechaNacimiento, domicilio: frmDomicilio });
+
+
+        //alert("Cuenta creada correctamente, seras redirigido al inicio ");
+     MsgAlerta('REGISTRO_EXITOSO', 'Cuenta creada correctamente, seras redirigido al inicio ');
 
     //redirigimos al usuario al index.html
     window.location.href = "/index.html";

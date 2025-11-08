@@ -1,5 +1,6 @@
 
 import { setUserData, getUserData } from '../../utils/SessionStorageController.js';
+import { MsgAlerta } from '../../utils/AlertController.js';
 
 
 //Usuarios de prueba para login
@@ -43,10 +44,13 @@ loginForm.addEventListener('submit', function (event) {
     usuariosPrueba.forEach(user => {
         if (user.email === usuario && user.password === password) {
 
-            alert("Inicio de sesión exitoso para el usuario: " + usuario);
+          //  alert("Inicio de sesion exitoso para el usuario: " + usuario);
+
+            MsgAlerta('LOGIN_EXITOSO');
+
 
             //Guardamos la sesion del usuario en sessionStorage, enviamos la KEY los VALUE con datos del usuario
-            setUserData('UserData', { email: user.email, name:user.nombre, apellido:user.apellido, fechaNacimiento:user.fechaNacimiento, domicilio:user.domicilio });
+            setUserData('UserData', { email: user.email, name: user.nombre, apellido: user.apellido, fechaNacimiento: user.fechaNacimiento, domicilio: user.domicilio });
 
 
             //redirigimos al usuario al index.html
@@ -54,7 +58,8 @@ loginForm.addEventListener('submit', function (event) {
 
         }
         else {
-            alert("No se pudo iniciar sesión. Usuario o contraseña incorrectos.");
+         //   alert("No se pudo iniciar sesion. Usuario o contraseña incorrectos.");
+            MsgAlerta('LOGIN_ERRONEO');
         }
     });
 
