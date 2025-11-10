@@ -41,7 +41,7 @@ let pageName = document.getElementById('pageName').value; // obtenemos el valor 
 
 export const navBarComponent = `
 
-            <a href="index.html"> <img src="/logo.png" height="150px" width="250px" alt="Logo"> </a>
+            <a href="index.html"> <img src="/assets/img/logo.png" height="150px" width="250px" alt="Logo"> </a>
             <br>
             <nav class="navbar navbar-expand-lg  rounded"
                 style=" background-color: #ddf1f2; border-bottom: 1px solid #5cc9a3; border-top: 1px solid #5cc9a3;">

@@ -1,0 +1,35 @@
+[
+  {
+    "img": "/assets/img/alimentoperro.webp",
+    "category": "Alimentos",
+    "title": "Alimento para Perros",
+    "description": "Alimento balanceado para perros de todas las edades.",
+    "price": "$200.00",
+    "quantity": 0
+  },
+  {
+    "img": "/assets/img/juguete_perro.webp",
+    "category": "Juguetes",
+    "title": "Juguete Perro",
+    "description": "Juguete de perro Dental Rellenable 9,5 X 5cm.",
+    "price": "$250.00",
+    "quantity": 0
+  },
+  {
+    "img": "/assets/img/hierbagatera.png",
+    "category": "Accesorios",
+    "title": "Juguete Gato",
+    "description": "Juguete para gato con hierba gatera.",
+    "price": "$210.00",
+    "quantity": 0
+  },
+  {
+    "img": "/assets/img/alimentogato.webp",
+    "category": "Alimentos",
+    "title": "Alimento para Gatos Excellent",
+    "description": "Alimento balanceado para gatos adultos 15Kg.",
+    "price": "$200.00",
+    "quantity": 0
+  }
+  
+]

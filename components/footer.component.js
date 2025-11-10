@@ -5,7 +5,7 @@ export const footerComponent = `
             <div class="row text-center text-md-start">
 
                 <div class="col-md-3 mb-3">
-                    <a href="/index.html"> <img src="/logo.png" class="img-fluid footer-logo" alt="Logo"> </a>
+                    <a href="/index.html"> <img src="/assets/img/logo.png" class="img-fluid footer-logo" alt="Logo"> </a>
                     <p class="text-muted small">Todo para tu mascota en un solo lugar.</p>
                 </div>
 
