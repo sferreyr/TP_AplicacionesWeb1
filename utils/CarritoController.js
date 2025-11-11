@@ -1,6 +1,6 @@
 import { cardComponent } from "../components/cards.component.js";
 import { setCarrito, getCarrito } from "./SessionStorageController.js";
-import { MsgAlerta } from '../../utils/AlertController.js';
+import { MsgAlerta } from './AlertController.js';
 
 
 let carrito = [];
