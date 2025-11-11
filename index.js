@@ -11,7 +11,7 @@ let products = [];
 // --- Carga del JSON de forma asincrona ---
 async function cargarProductos() {
     try {
-        const res = await fetch('./api/data.json');
+        const res = await fetch('/api/data.json');
         const data = await res.json();
         console.log("Data:", data);
         products = data;
