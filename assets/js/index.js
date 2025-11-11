@@ -1,9 +1,9 @@
 //Importamos navbar y footer components
-import { navBarComponent } from "./components/navbar.component.js";
-import { footerComponent } from "./components/footer.component.js";
-import { cardComponent } from "./components/cards.component.js";
-import { getUserData, Logout, getCarrito } from "./utils/SessionStorageController.js";
-import { AgregarProductoCarrito, IncrementarProductoCantidad, RestarProductoCantidad } from "./utils/CarritoController.js";
+import { navBarComponent } from "../../components/navbar.component.js";
+import { footerComponent } from "../../components/footer.component.js";
+import { cardComponent } from "../../components/cards.component.js";
+import { getUserData, Logout, getCarrito } from "../../utils/SessionStorageController.js";
+import { AgregarProductoCarrito, IncrementarProductoCantidad, RestarProductoCantidad } from "../../utils/CarritoController.js";
 
 //variable para productos 
 let products = [];
