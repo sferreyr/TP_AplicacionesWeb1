@@ -8,14 +8,28 @@ import { AgregarProductoCarrito, IncrementarProductoCantidad, RestarProductoCant
 //variable para productos 
 let products = [];
 
-fetch('/api/data.json').then(res => res.json()).then(data => {
-    const jsonFormat = JSON.stringify(data);
-    console.log("Data :", data);
+// --- Carga del JSON de forma asincrona ---
+async function cargarProductos() {
+    try {
+        const res = await fetch('./api/data.json');
+        const data = await res.json();
+        console.log("Data:", data);
+        products = data;
 
-    products = data; // seteamos los productos con los datos del JSON
-}).catch(error => {
-    console.error("Error al cargar el archivo JSON:", error);
-});
+    } catch (error) {
+        console.error("Error al cargar el archivo JSON:", error);
+    }
+}
+
+// Renderizamos/hacemos aparecer las cards de productos
+function renderizarCards() {
+    const cardContainer = document.getElementById('cardContainer');
+    if (!cardContainer) return; // si no esta el contenedor, salimos
+
+    cardContainer.innerHTML = products.map(p =>
+        cardComponent(p.img, p.title, p.description, p.price, p.quantity)
+    ).join('');
+}
 
 
 
@@ -27,7 +41,10 @@ let isloggedIn = false;
 let navContainer = document.querySelector('header');
 let footerContainer = document.querySelector('footer');
 
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
+    //Cargamos productos desde el JSON
+    await cargarProductos();          
+
     let pageName = document.getElementById('pageName').value; // obtenemos el valor de la pagina actual
 
     //Comprobamos si el usuario esta logueado
@@ -46,16 +63,10 @@ window.addEventListener('load', () => {
         footerContainer.innerHTML = footerComponent; // remplaza footer
     }
 
+
     //Si la pagina es index.html cargamos las cards de productos
     if (pageName === 'Inicio') {
-
-        let cardContainer = document.getElementById('cardContainer');
-
-        // Renderizamos/hacemos aparecer las cards de productos
-        cardContainer.innerHTML = products.map(p =>
-            cardComponent(p.img, p.title, p.description, p.price, p.quantity)
-        ).join('');
-
+        renderizarCards();
 
         //Comprobamos carrito en sessionStorage
         const obtenerCarrito = getCarrito();
@@ -75,9 +86,11 @@ window.addEventListener('load', () => {
 
     //Si la pagina es alimentos.html cargamos las cards de productos
     if (pageName === 'Alimentos') {
+        
 
         console.log("Cargando productos de alimentos...");
         let cardContainer = document.getElementById('cardContainer');
+  if (!cardContainer) return; // si no esta el contenedor, salimos
 
         //Filtramos solo alimentos que tengan cateogria 'Alimentos'
         const alimentos = products.filter(p => p.category === 'Alimentos');
@@ -96,9 +109,9 @@ window.addEventListener('load', () => {
         }
 
         // Activar botones "Agregar al carrito"
-        AgregarProductoCarrito(products);
-        IncrementarProductoCantidad(products);
-        RestarProductoCantidad(products);
+        AgregarProductoCarrito(alimentos);
+        IncrementarProductoCantidad(alimentos);
+        RestarProductoCantidad(alimentos);
 
     };
 
