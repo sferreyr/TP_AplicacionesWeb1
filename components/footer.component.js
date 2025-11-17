@@ -11,7 +11,7 @@ export const footerComponent = `
 
 
                 <div class="col-md-3 mb-3">
-                    <h6 class="fw-bold">Inicio</h6>
+                    <h6 class="fw-bold">Navegación</h6>
                     <ul class="nav flex-column">
                         <li class="nav-item"><a href="/index.html" class="nav-link px-0 text-muted">Inicio</a></li>
                         <li class="nav-item"><a href="/pages/sobrenosotros.html" class="nav-link px-0 text-muted">Sobre

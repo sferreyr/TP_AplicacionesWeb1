@@ -1,7 +1,13 @@
 
-import { getUserData, Logout, getCarrito } from "../utils/SessionStorageController.js";
+import { getUserData, Logout, getCarrito, getCarritoCount } from "../utils/SessionStorageController.js";
 
-let cantidadCarrito = 0;
+
+//mostrmaos la cantidad en el badge
+//document.getElementById("carritoCount").innerText = getCarritoCount();
+
+let cantidadCarrito = getCarritoCount();
+console.log(cantidadCarrito);
+
 //variable para chequear inicio de sesion
 let isloggedIn = false;
 
@@ -13,8 +19,6 @@ if (getUserData('UserData')) {
 
     isloggedIn = true;
 }
-
-
 
 
 const navElements = [
@@ -81,9 +85,9 @@ export const navBarComponent = `
     }
 
                         </ul>
-                        <form class="d-flex me-3" role="search">
+                        <form action="/pages/busqueda.html" method="get" class="d-flex me-3" role="search">
                             <input class="form-control me-2" type="search" placeholder="Buscar productos"
-                                aria-label="Buscar">
+                                aria-label="Buscar" name="busqueda">
                             <button class="btn btn-outline-success" type="submit">Buscar</button>
                         </form>
 
@@ -91,10 +95,10 @@ export const navBarComponent = `
 
                         <ul>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">
+                            <a class="nav-link" href="/pages/carrito.html">
                                 <i class="fa-solid fa fa-shopping-cart"></i>  Carrito
                              </a>
-                             <span class="badge bg-secondary carritoCantidad">${cantidadCarrito}0</span>
+                             <span id="carritoCantidadBadge" class="badge bg-secondary">${cantidadCarrito}</span>
                          </li>
                          </ul>         
                                                <div class="dropdown me-3">

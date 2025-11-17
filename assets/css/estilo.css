@@ -8,6 +8,9 @@ body {
          background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
 }
 
+
+
+
 ul {
     text-decoration: none;
     list-style: none;
@@ -76,5 +79,21 @@ footer a:hover {
 }
 
 
+.cuidadosCard:hover{
+    background-color: #8ec5fc;
+}
 
 
+/*Tablas de carrito*/
+.td-producto {
+    display: flex;
+    align-items: center;       /* centrado verticalmente */
+    gap: 10px;                 /* separacion entre imagen y texto */
+}
+
+.td-producto img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;         /* todas las imagenes se ven iguales */
+    border-radius: 6px;    
+}

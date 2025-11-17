@@ -18,16 +18,32 @@
 
     </header>
     <input type="hidden" id="pageName" value="Accesorios">
-
+    <!-- TOAST - Notificaciones -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Notificación</strong>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">
+               
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <div class="py-4 text-center text-white  border rounded mb-4 shadow-sm"
             style="background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);">
             <h1 class="fw-bold mb-2 text-secondary">Accesorios</span> <i
                     class=" fa-solid fa-bone"></i></h1>
-
         </div>
+    <div class="container text-center">
+                <div id="cardContainer" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-2">
 
+                </div>
+        </div>
 
     </div>
     <footer class=" py-4 border-top border-success mt-4">

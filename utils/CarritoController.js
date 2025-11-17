@@ -1,9 +1,10 @@
 import { cardComponent } from "../components/cards.component.js";
-import { setCarrito, getCarrito } from "./SessionStorageController.js";
+import { setCarrito, getCarrito, getCarritoCount } from "./SessionStorageController.js";
 import { MsgAlerta } from './AlertController.js';
 
+//creamos la variable del carrito, si no hay nada dejamos vacio.
+let carrito = getCarrito() || [];
 
-let carrito = [];
 
 
 
@@ -36,11 +37,12 @@ export const ActualizarCantidades = (productos) => {
 
         }
       });
+        actualizarBadgeCarrito();
       setCarrito('Carrito', carrito); // Actualizamos el carrito en sessionStorage
     });
   }
-
-
+  setCarrito('Carrito', carrito);
+  actualizarBadgeCarrito();
 }
 
 
@@ -50,15 +52,15 @@ export const IncrementarProductoCantidad = (productos) => {
   //Iteramos sobre los botones y les agregamos el evento click
   for (let i = 0; i < botones.length; i++) {
     botones[i].addEventListener('click', () => {
+      carrito = getCarrito() || [];
       const producto = productos[i];
       const cantidadElemento = document.getElementsByClassName('quantity');
-
-
       let quantity = parseInt(cantidadElemento[i].innerText);
       quantity += 1;
       cantidadElemento[i].innerText = quantity;
 
       // Recorremos el carrito
+      let existe = false;
       carrito.forEach(e => {
         if (e.title === producto.title) {
 
@@ -70,14 +72,20 @@ export const IncrementarProductoCantidad = (productos) => {
 
           MsgAlerta('PRODUCTO_INCREMENTADO', producto.title);
 
+          existe = true;
         }
       });
+
+      //si NO existe, se creamos en el carrito
+      if (!existe) {
+                 carrito.push(producto); // agregamos el producto al carrito
+      }
+
       setCarrito('Carrito', carrito); // Actualizamos el carrito en sessionStorage
+      actualizarBadgeCarrito();
     });
   }
-
-
-}
+};
 
 export const RestarProductoCantidad = (productos) => {
   // Obtenemos todos los botones "+" de las cards
@@ -93,16 +101,17 @@ export const RestarProductoCantidad = (productos) => {
       if (quantity > 0) {
         //A la cantidad obtenida del card le restamos 1
         quantity -= 1;
-          //Actualizamos la cantidad en la card
-      cantidadElemento[i].innerText = quantity;
+        //Actualizamos la cantidad en la card
+        cantidadElemento[i].innerText = quantity;
 
       }
-    
+
       // Recorremos el carrito
       carrito.forEach(e => {
         if (e.title === producto.title) {
           if (e.quantity > 0) {
             e.quantity -= 1; //restamos 1 a la cantidad del producto en el carrito
+            
             cantidadElemento[i].innerText = e.quantity;
 
             MsgAlerta('PRODUCTO_DECREMENTADO', producto.title);
@@ -110,10 +119,11 @@ export const RestarProductoCantidad = (productos) => {
         }
       });
       setCarrito('Carrito', carrito); // Actualizamos el carrito en sessionStorage
+        actualizarBadgeCarrito();
     });
+    setCarrito('Carrito', carrito);
   }
-
-
+  actualizarBadgeCarrito();
 }
 
 
@@ -154,6 +164,7 @@ export const AgregarProductoCarrito = (productos) => {
           }
         });
         setCarrito('Carrito', carrito); // Actualizamos el carrito en sessionStorage
+          actualizarBadgeCarrito();
 
         // Si no estaba en el carrito, lo agregamos
         if (!existe) {
@@ -172,14 +183,26 @@ export const AgregarProductoCarrito = (productos) => {
           carrito.push(producto); // agregamos el producto al carrito
           setCarrito('Carrito', carrito); // Actualizamos el carrito en sessionStorage
           MsgAlerta('PRODUCTO_AGREGADO', producto.title);
+            actualizarBadgeCarrito();
         }
       }
-
+      setCarrito('Carrito', carrito); // 
       console.log('Carrito actual:', carrito);
+      actualizarBadgeCarrito();
     });
   }
 };
 
+
+
+function actualizarBadgeCarrito() {
+  const cantidad = getCarritoCount();
+  const badge = document.getElementById("carritoCantidadBadge");
+
+  console.log("BADGE ACTUALIZADO");
+  if (!badge) return; // Si no existe badge en el html salimos
+  badge.textContent = cantidad; // seteamos la cantidad obtenida del total del carrito
+}
 
 
 

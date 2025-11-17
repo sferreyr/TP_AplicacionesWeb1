@@ -17,17 +17,109 @@
     <header class="mb-4">
 
     </header>
-      <input type="hidden" id="pageName" value="Cuidados">
+    <input type="hidden" id="pageName" value="Cuidados">
 
 
     <div class="container">
         <div class="py-4 text-center text-white  border rounded mb-4 "
             style="background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);">
-            <h1 class="fw-bold mb-2 text-secondary">Cuidados</span> <i
-                    class=" fa-solid fa-heart"></i></h1>
+            <h1 class="fw-bold mb-2 text-secondary">Cuidados</span> <i class=" fa-solid fa-heart"></i></h1>
+        </div>
+
+        <p class="lead text-secondary">
+            En <strong class="fw-bold text-success">La Tienda de Mishi</strong> creemos que cada mascota merece amor,
+            cuidado y productos de calidad.
+            Nuestro objetivo es acompañarte con información útil y consejos prácticos para que tu compañero peludo viva
+            feliz y saludable.
+        </p>
+
+        <!-- consejos -->
+        <div class="row row-cols-1 row-cols-md-3  ">
+
+
+            <div class="col mb-2">
+                <div class="card shadow-sm border-0 cuidadosCard">
+                    <div class="card-body text-center">
+                        <i class="fa-solid fa-bone fa-3x text-primary p-1"></i>
+                        <h5 class="card-title fw-bold text-success">Alimentación</h5>
+                        <span class="text-success">Cada mascota necesita una buena alimentación</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-2">
+                <div class="card shadow-sm border-0 cuidadosCard">
+                    <div class="card-body text-center">
+                        <i class="fa-solid fa-dog fa-3x text-warning p-1"></i>
+                        <h5 class="card-title fw-bold text-success">Ejercicio y paseos</h5>
+                        <span class="text-success">El movimiento diario mejora su bienestar</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col mb-2">
+                <div class="card shadow-sm border-0 cuidadosCard">
+                    <div class="card-body text-center">
+                        <i class="fa-solid fa-stethoscope fa-2x text-danger mb-3 p-1"></i>
+                        <h5 class="card-title fw-bold text-success">Salud</h5>
+                        <span class="text-success">Los controles regulares previenen enfermedades</span>
+                    </div>
+                </div>
+            </div>
 
         </div>
 
+        <!-- tabla de cuidados -->
+        <div class="mt-5">
+            <h4 class="text-success mb-3 text-center fw-bold">
+                Rutina básica de cuidados
+            </h4>
+            <div class="table-responsive ">
+                <table class="table table-bordered table-hover table-striped align-middle text-center">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Actividad</th>
+                            <th>Frecuencia</th>
+                            <th>Beneficio principal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><i class="fa-solid fa-bowl-food me-2 text-primary"></i>Alimentación</td>
+                            <td>2 veces por día</td>
+                            <td>Energía y nutrición equilibrada</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-shower me-2 text-info"></i>Baño e higiene</td>
+                            <td>1 vez al mes</td>
+                            <td>Piel sana y pelaje limpio</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-paw me-2 text-warning"></i>Paseos y juegos</td>
+                            <td>Diariamente</td>
+                            <td>Salud física y emocional</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-syringe me-2 text-danger"></i>Vacunación</td>
+                            <td>Según calendario</td>
+                            <td>Prevención de enfermedades</td>
+                        </tr>
+                        <tr>
+                            <td><i class="fa-solid fa-tooth me-2 text-secondary"></i>Limpieza dental</td>
+                            <td>1 vez por semana</td>
+                            <td>Evita mal aliento y caries</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- cierre -->
+        <div class="alert alert-info mt-4 text-center shadow-sm">
+            <i class="fa-solid fa-paw me-2"></i>
+            Recordá: una mascota cuidada es una mascota feliz
+            <i class=" fa-solid fa-heart"></i>
+        </div>
 
     </div>
 
@@ -40,7 +132,7 @@
     </a>
     <!-- Scripts-->
     <script type="module" src="/assets/js/index.js"></script>
-    
+
     <!-- Implemenacion de Boostrap 5 Javascript-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"

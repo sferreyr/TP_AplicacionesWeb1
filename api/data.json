@@ -1,35 +1,74 @@
 [
   {
     "img": "/assets/img/alimentoperro.webp",
+    "nuevo": "no",
     "category": "Alimentos",
     "title": "Alimento para Perros",
-    "description": "Alimento balanceado para perros de todas las edades.",
-    "price": "$200.00",
+    "description": "Alimento balanceado para perros de todas las edades. 2KG",
+    "price": "$5000.00",
     "quantity": 0
   },
   {
     "img": "/assets/img/juguete_perro.webp",
+    "nuevo": "no",
     "category": "Juguetes",
     "title": "Juguete Perro",
     "description": "Juguete de perro Dental Rellenable 9,5 X 5cm.",
-    "price": "$250.00",
+    "price": "$2050.00",
     "quantity": 0
   },
   {
     "img": "/assets/img/hierbagatera.png",
+    "nuevo": "no",
     "category": "Accesorios",
-    "title": "Juguete Gato",
-    "description": "Juguete para gato con hierba gatera.",
-    "price": "$210.00",
+    "title": "Hierba Gatera",
+    "description": "Accesorio para gato con hierba gatera.",
+    "price": "$2100.00",
     "quantity": 0
   },
   {
     "img": "/assets/img/alimentogato.webp",
+    "nuevo": "si",
     "category": "Alimentos",
     "title": "Alimento para Gatos Excellent",
     "description": "Alimento balanceado para gatos adultos 15Kg.",
-    "price": "$200.00",
+    "price": "$12000.00",
+    "quantity": 0
+  },
+  {
+    "img": "/assets/img/pileta.webp",
+    "nuevo": "no",
+    "category": "Accesorios",
+    "title": "Pileta AFP CHILL OUT 2 EN 1 SPRINKING POOL",
+    "description": "Fabricada con material grueso y seguro, con base antideslizante",
+    "price": "$15000.00",
+    "quantity": 0
+  },
+  {
+    "img": "/assets/img/piedrasGato1.webp",
+    "nuevo": "si",
+    "category": "Accesorios",
+    "title": "Piedras Gato Real BENTONITA X20 KG",
+    "description": "20 KG de piedras sanitarias para gatos",
+    "price": "$15000.00",
+    "quantity": 0
+  },
+  {
+    "img": "/assets/img/piedrasGato2.webp",
+    "nuevo": "no",
+    "category": "Accesorios",
+    "title": "Piedras Gato Real VITALFUN BENTONITAS X12 KG",
+    "description": "12 KG de piedras sanitarias para gatos",
+    "price": "$12500.00",
+    "quantity": 0
+  },
+  {
+    "img": "/assets/img/frizbi.webp",
+    "nuevo": "no",
+    "category": "Juguetes",
+    "title": "Frisbee Volador Anti Mordida",
+    "description": "Hecho de caucho de primera calidad para un juguete duradero",
+    "price": "$3500.00",
     "quantity": 0
   }
-  
 ]

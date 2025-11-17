@@ -1,0 +1,21 @@
+[
+
+
+    {
+        "email": "test@test.com",
+        "nombre": "TestUser",
+        "apellido": "Apellido",
+        "fechaNacimiento": "2025-11-01",
+        "domicilio": "Calle Falsa 123",
+        "password": "password123"
+    },
+        {
+        "email": "test2@test.com",
+        "nombre": "TestUser2",
+        "apellido": "Apellido",
+        "fechaNacimiento": "2025-11-01",
+        "domicilio": "Calle Falsa 123",
+        "password": "password123"
+    }
+
+]

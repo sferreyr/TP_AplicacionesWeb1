@@ -2,39 +2,55 @@
 
 
 
-import { getUserData } from "../utils/SessionStorageController.js";
+import { getUserData, getCarrito } from "../utils/SessionStorageController.js";
 
 
-export const cardComponent = (img, title, description, price, quantity) => {
+//creamos la variable del carrito, si no hay nada dejamos vacio.
+let carrito = getCarrito() || [];
 
-let isNuevo = false; //Variable para definir si el producto es nuevo
-
-//variable para chequear inicio de sesion
-let isloggedIn = false;
-
-let emailUser = "";
-
-if (getUserData('UserData')) {
-    console.log("Usuario logueado: " + getUserData('UserData').email);
-    emailUser = getUserData('UserData').email;
-
-    isloggedIn = true;
-}
+// variable cantidad de cada producto del carrito
+let cantidadCarrito = 0;
 
 
-// Marcamos juguetes como nuevos
-if (title == 'Juguete Perro' || title == 'Juguete Gato') {
-    isNuevo = true;
-}
+export const cardComponent = (img, nuevo, title, description, price, quantity) => {
+    let isNuevo = false; //Variable para definir si el producto es nuevo
+
+    if (nuevo == 'si') {
+        isNuevo = true;
+    } else {
+        isNuevo = false;
+    }
+
+    //variable para chequear inicio de sesion
+    let isloggedIn = false;
+
+    let emailUser = "";
+
+    if (getUserData('UserData')) {
+        console.log("Usuario logueado: " + getUserData('UserData').email);
+        emailUser = getUserData('UserData').email;
+
+        isloggedIn = true;
+    }
+
+    //Obtenemos cantidad de productos en el carrito para cada card
+    const enCarrito = carrito.find(p => p.title === title);
+    if (enCarrito) {
+        cantidadCarrito = enCarrito.quantity;
+    } else {
+        cantidadCarrito = 0
+    }
+
+
 
     return `
                     <div class="col">
                     <div class="card h-100 text-center shadow border position-relative">
 
-                    ${ isNuevo ? `
+                    ${isNuevo ? `
                         <span class="badge text-bg-primary text-warning"
                             style="position:absolute; margin-top:5px; margin-left: 5px">Nuevo</span>
-                        ` : '' }
+                        ` : ''}
 
 
                         <img src="${img}" alt="Producto 1" class="card-img-top img-fluid p-3"
@@ -47,7 +63,7 @@ if (title == 'Juguete Perro' || title == 'Juguete Gato') {
                               ${isloggedIn ? `
                             <div class="d-flex justify-content-between mb-3">
                                 <button class="btn btn-outline-secondary btn-sm btn_restar">-</button>
-                                <span class="align-self-center quantity">${quantity}</span>
+                                <span class="align-self-center quantity">${cantidadCarrito}</span>
                                 <button class="btn btn-outline-secondary btn-sm btn_sumar">+</button>
                             </div>
                                

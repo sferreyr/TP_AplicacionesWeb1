@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Implementacion de Boostrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <LINK REL="stylesheet" TYPE="text/css" HREF="../assets/css/estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <title>La Tienda de Mishi - Aplicación Ecommerce Productos para mascotas</title>
+</head>
+
+<body class="bg-light">
+    <header class="mb-4">
+
+    </header>
+
+    <input type="hidden" id="pageName" value="Carrito">
+    <!-- TOAST - Notificaciones -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="liveToast" class="toast align-items-center text-white bg-success border-0" role="alert"
+            aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Notificación</strong>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"
+                    aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="py-2 text-center text-white  border rounded mb-4 shadow-sm"
+            style="background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);">
+            <h1 class="fw-bold text-success">
+                <i class="fa-solid fa fa-shopping-cart"></i> Tu Carrito:
+            </h1>
+        </div>
+        <!-- Carrito tabla -->
+        <div class="table-responsive">
+            <table class="table table-striped table-hover table-bordered text-center align-middle shadow-sm">
+                <thead class="table-success text-center">
+                    <tr>
+                        <th><i class="fa-solid fa-box me-1"></i> Producto</th>
+                        <th><i class="fa-solid fa-hashtag me-1"></i> Cantidad</th>
+                        <th><i class="fa-solid fa-dollar-sign me-1"></i> Precio unitario</th>
+                        <th><i class="fa-solid fa-calculator me-1"></i> Total</th>
+
+                    </tr>
+                </thead>
+                <tbody id="carrito">
+                    <!-- <tr>
+                        <td class="text-center fw-bold"><img src="../assets/img/frizbi.webp" width="50px"
+                                height="50px" /> test</td>
+                        <td>2</td>
+                        <td>$120</td>
+                        <td>$240</td>
+                    </tr>
+                     -->
+
+                </tbody>
+                <tfoot class="table-light">
+
+                    <tr>
+                        <th></th>
+                        <th id="finalProductos"></th>
+                        <th></th>
+                        <td id="finalTotal" class="fw-bold text-success"></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+
+
+
+    </div>
+
+    <footer class="py-4 border-top border-success mt-4">
+
+
+    </footer>
+    <!-- Boton de volver arriba -->
+    <a href="#" class="btn btn-primary position-fixed bottom-0 end-0 m-4">
+        <i class="fa fa-arrow-up"></i>
+    </a>
+
+    <!-- Scripts-->
+    <script type="module" src="/assets/js/index.js"></script>
+
+    <!-- Implemenacion de Boostrap 5 Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
