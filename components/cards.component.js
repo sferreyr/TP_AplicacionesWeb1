@@ -45,7 +45,7 @@ export const cardComponent = (img, nuevo, title, description, price, quantity) =
 
     return `
                     <div class="col">
-                    <div class="card h-100 text-center  shadow border position-relative">
+                    <div class="card h-100 text-center  shadow border position-relative d-flex">
 
                     ${isNuevo ? `
                         <span class="badge text-bg-primary text-warning"
@@ -55,11 +55,11 @@ export const cardComponent = (img, nuevo, title, description, price, quantity) =
 
                         <img src="${img}" alt="Producto 1" class="card-img-top img-fluid p-3"
                             style="height:200px; object-fit:contain;">
-                        <div class="card-body">
-                            <h5 class="card-title text-success" style="font-weight:bold">${title}</h5>
-                            <p class=" text-secondary descripcion mb-4">${description}</p>
-                       
-                            <p class=" precio">${price}</p>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title text-success mt-auto" style="font-weight:bold">${title}</h5>
+                            <p class=" text-secondary descripcion mb-4 mt-auto">${description}</p>
+                            <p class=" text-center precio mt-auto bg-primary-subtle text-primary fw-bold rounded shadow-sm">${price}</p>
+
                         </div>
                         <div class="card-footer rounded" style="background-color: #dcf9ff;">
                            ${isloggedIn ? `
