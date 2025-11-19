@@ -27,7 +27,7 @@ export const cardComponent = (img, nuevo, title, description, price, quantity) =
     let emailUser = "";
 
     if (getUserData('UserData')) {
-        console.log("Usuario logueado: " + getUserData('UserData').email);
+        // console.log("Usuario logueado: " + getUserData('UserData').email);
         emailUser = getUserData('UserData').email;
 
         isloggedIn = true;
@@ -45,7 +45,7 @@ export const cardComponent = (img, nuevo, title, description, price, quantity) =
 
     return `
                     <div class="col">
-                    <div class="card h-100 text-center shadow border position-relative">
+                    <div class="card h-100 text-center  shadow border position-relative">
 
                     ${isNuevo ? `
                         <span class="badge text-bg-primary text-warning"
@@ -57,10 +57,12 @@ export const cardComponent = (img, nuevo, title, description, price, quantity) =
                             style="height:200px; object-fit:contain;">
                         <div class="card-body">
                             <h5 class="card-title text-success" style="font-weight:bold">${title}</h5>
-                            <p class="card-text text-secondary descripcion">${description}</p>
-                            <p class="card-text precio">${price}</p>
-
-                              ${isloggedIn ? `
+                            <p class=" text-secondary descripcion mb-4">${description}</p>
+                       
+                            <p class=" precio">${price}</p>
+                        </div>
+                        <div class="card-footer rounded" style="background-color: #dcf9ff;">
+                           ${isloggedIn ? `
                             <div class="d-flex justify-content-between mb-3">
                                 <button class="btn btn-outline-secondary btn-sm btn_restar">-</button>
                                 <span class="align-self-center quantity">${cantidadCarrito}</span>
@@ -70,7 +72,7 @@ export const cardComponent = (img, nuevo, title, description, price, quantity) =
                             <button class="btn btn-outline-info w-100 mt-auto mb-2 btnAgregarCarrito">Añadir al
                                 carrito</button>
 
-                            <button id="btnComprarAhora" class="btn btn-outline-info w-100 mt-auto">Comprar
+                            <button class="btn btn-outline-info w-100 mt-auto btnComprarAhora">Comprar
                                 ahora</button>
 
                                  `: `
@@ -89,7 +91,6 @@ export const cardComponent = (img, nuevo, title, description, price, quantity) =
                                     </a>
 
                                  ` }
-
                         </div>
                     </div>
                 </div>

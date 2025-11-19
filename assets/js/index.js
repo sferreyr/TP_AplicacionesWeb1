@@ -3,7 +3,8 @@ import { navBarComponent } from "../../components/navbar.component.js";
 import { footerComponent } from "../../components/footer.component.js";
 import { cardComponent } from "../../components/cards.component.js";
 import { getUserData, Logout, getCarrito, getCarritoCount } from "../../utils/SessionStorageController.js";
-import { AgregarProductoCarrito, IncrementarProductoCantidad, RestarProductoCantidad } from "../../utils/CarritoController.js";
+import { AgregarProductoCarrito, IncrementarProductoCantidad, RestarProductoCantidad, IncProductoCantidadCarrito, RestProductoCantidadCarrito } from "../../utils/CarritoController.js";
+import { MsgAlerta } from '../../utils/AlertController.js';
 
 //variable para productos 
 let products = [];
@@ -13,7 +14,7 @@ async function cargarProductos() {
     try {
         const res = await fetch('/api/data.json');
         const data = await res.json();
-        console.log("Data:", data);
+        // console.log("Data:", data);
         products = data;
 
     } catch (error) {
@@ -75,7 +76,7 @@ window.addEventListener('load', async () => {
 
     //Comprobamos si el usuario esta logueado
     if (getUserData('UserData')) {
-        console.log("Usuario logueado: " + getUserData('UserData').email);
+        // console.log("Usuario logueado: " + getUserData('UserData').email);
         isloggedIn = true
     }
 
@@ -89,107 +90,32 @@ window.addEventListener('load', async () => {
         footerContainer.innerHTML = footerComponent; // remplaza footer
     }
 
-    /*
-        //Si la pagina es index.html cargamos las cards de productos
-        if (pageName === 'Inicio') {
-            renderizarCards();
-    
-            //Comprobamos carrito en sessionStorage
-            const obtenerCarrito = getCarrito();
-            if (obtenerCarrito) {
-                //ObtenerCantidadesCarrito(); // Actualizamos las cantidades en la interfaz
-    
-                console.log("Carrito cargado desde sessionStorage:", carrito);
-            }
-    
-            // Activar botones "Agregar al carrito"
-            AgregarProductoCarrito(products);
-    
-            IncrementarProductoCantidad(products);
-            RestarProductoCantidad(products);
-    
-        };
-    
-    
-        //Si la pagina es alimentos.html cargamos las cards de productos
-        if (pageName === 'Alimentos') {
-    
-    
-            console.log("Cargando productos de alimentos...");
-            let cardContainer = document.getElementById('cardContainer');
-            if (!cardContainer) return; // si no esta el contenedor, salimos
-    
-            //Filtramos solo alimentos que tengan cateogria 'Alimentos'
-            const alimentos = products.filter(p => p.category === 'Alimentos');
-    
-            // Renderizamos/hacemos aparecer las cards de productos
-            cardContainer.innerHTML = alimentos.map(p =>
-                cardComponent(p.img, p.title, p.description, p.price, p.quantity)
-            ).join('');
-    
-    
-            //Comprobamos carrito en sessionStorage
-            const obtenerCarrito = getCarrito();
-            if (obtenerCarrito) {
-                //ObtenerCantidadesCarrito(); // Actualizamos las cantidades en la interfaz
-                console.log("Carrito cargado desde sessionStorage:", carrito);
-            }
-    
-            // Activar botones "Agregar al carrito"
-            AgregarProductoCarrito(alimentos);
-            IncrementarProductoCantidad(alimentos);
-            RestarProductoCantidad(alimentos);
-    
-        };
-    */
-
-    //Comprobamos carrito en sessionStorage
-    const obtenerCarrito = getCarrito();
 
     switch (pageName) {
         case 'Inicio':
             renderizarCards(pageName);
 
-            if (obtenerCarrito) {
-                //ObtenerCantidadesCarrito(); // Actualizamos las cantidades en la interfaz
-                console.log("Carrito cargado desde sessionStorage:", carrito);
-            }
-
-
             break;
 
         case 'Alimentos':
             renderizarCards(pageName);
-            console.log("Cargando productos de alimentos...");
-
-            //Comprobamos carrito en sessionStorage
-            if (obtenerCarrito) {
-                //ObtenerCantidadesCarrito(); // Actualizamos las cantidades en la interfaz
-                console.log("Carrito cargado desde sessionStorage:", carrito);
-            }
+            // console.log("Cargando productos de alimentos...");
 
 
             break;
 
         case 'Juguetes':
             renderizarCards(pageName);
-            console.log(pageName);
-            console.log("Cargando productos de Juguetes...");
-            if (obtenerCarrito) {
-                //ObtenerCantidadesCarrito(); // Actualizamos las cantidades en la interfaz
-                console.log("Carrito cargado desde sessionStorage:", carrito);
-            }
+            //     console.log(pageName);
+            //  console.log("Cargando productos de Juguetes...");
+
 
             break;
 
         case 'Accesorios':
             renderizarCards(pageName);
-            console.log(pageName);
-            console.log("Cargando productos de Accesorios...");
-            if (obtenerCarrito) {
-                //ObtenerCantidadesCarrito(); // Actualizamos las cantidades en la interfaz
-                console.log("Carrito cargado desde sessionStorage:", carrito);
-            }
+            //   console.log(pageName);
+            //  console.log("Cargando productos de Accesorios...");
 
             break;
 
@@ -203,8 +129,8 @@ window.addEventListener('load', async () => {
             // document.getElementById("resultadoBusqueda").innerText = termino;
             document.getElementById("resultadoBusqueda").textContent = termino ?? ""; // Cambiamos el texto por el termino si no queda en blanco
 
-            console.log(pageName);
-            console.log("Cargando productos de busqueda...");
+            //    console.log(pageName);
+            //    console.log("Cargando productos de busqueda...");
 
             //Filtramos todos los productos que sean iguales al titulo a su vez convertimos a minuscula
             // Filtrar tipo SQL: nombre LIKE '%termino%'
@@ -225,12 +151,16 @@ window.addEventListener('load', async () => {
             break;
 
         case 'Carrito':
-
+            let cuponaplicado = false;
+            let cuponValido = "MISHI10";
             let finalTotal = 0;
             let productosTotal = 0
             let htmlCarrito = document.getElementById("carrito");
             let htmlFinalTotal = document.getElementById("finalTotal");
             let htmlProductosFinal = document.getElementById("finalProductos");
+
+            let htmlCuponDescuento = document.getElementById("btnAplicarDescuento");
+
             // Renderizamos/hacemos aparecer las cards de productos
             htmlCarrito.innerHTML = carrito.map(p => {
                 const price = parseFloat(p.price.replace('$', '')) || 0; //convertimos a float o 0, a su vez remplazamos $ por nada(eliminamos el simbolo).
@@ -238,27 +168,83 @@ window.addEventListener('load', async () => {
                 const total = price * qty;
                 productosTotal += qty;
                 finalTotal += total;
-                return `
-        <tr>
-            <td class=" td-producto text-center fw-bold">
-                <img src="${p.img}" width="50px" height="50px" /> ${p.title}
-            </td>
-            <td>${qty}</td>
-            <td>${price}</td>
-            <td>${total}</td>
-        </tr>
-    `
+                return qty > 0
+                    ? `
+                        <tr class="trProducto">
+                            <td class="td-producto text-center fw-bold">
+                                <img src="${p.img}" width="50px" height="50px" /> ${p.title}
+                            </td>
+                            <td><span class="quantity">${qty}</span></td>
+                            <td><span class="price">$${price}</span></td>
+                            <td><span class="total">$${total}</span></td>
+                            <td class="text-center">
+                                <button class="btn btn-sm btn-outline-danger btn_restar">
+                                    <i class="fa-solid fa-minus"></i>
+                                </button>
+
+                                <button class="btn btn-sm btn-outline-success btn_sumar">
+                                    <i class="fa-solid fa-plus"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        `
+                    : '';
             }).join('');
 
-            htmlFinalTotal.innerHTML = `Total final: $${finalTotal}`;
+            htmlFinalTotal.innerHTML = finalTotal;
 
             htmlProductosFinal.innerHTML = productosTotal;
 
-            console.log(pageName);
+            // Activamos funcionalidades para incrementar o decrementar productos en el carrrito
+            IncProductoCantidadCarrito(carrito);
+            RestProductoCantidadCarrito(carrito);
+
+
+            //Listener para el boton de aplicar descuento
+            htmlCuponDescuento.addEventListener('click', () => {
+
+                let htmlCupon = document.getElementById("porcentajeDescuento").value;
+                let htmlCuponT = document.getElementById("porcentajeDescuento");
+
+                let codigoAplicado = document.getElementById("codigoAplicado")
+                
+                console.log(htmlCupon);
+
+                if (htmlCupon === cuponValido) {
+
+                    MsgAlerta('CUPON_VALIDO');
+                    cuponaplicado = true;
+                    // aplicamos el descuento y cambiamos visualmente
+                    finalTotal = finalTotal - (finalTotal * 0.10)
+                    htmlFinalTotal.innerHTML = finalTotal;
+
+
+                    htmlCuponDescuento.disabled = true; //deshabilitamos el boton
+                    htmlCuponT.disabled = true;
+                    codigoAplicado.innerHTML = `
+                <div class="alert alert-success" role="alert">
+                ¡Cupón del 10% aplicado al precio total!
+                </div>
+                `
+                    //Desactivamos botones de incrementar y decrementar productos
+                    const botonSumar = document.getElementsByClassName('btn_sumar');
+                    //Iteramos sobre los botones y les agregamos el evento click
+                    for (let i = 0; i < botonSumar.length; i++) {
+                        botonSumar[i].disabled = true;
+                    }
+                    const botonRestar = document.getElementsByClassName('btn_restar');
+                    //Iteramos sobre los botones y les agregamos el evento click
+                    for (let i = 0; i < botonRestar.length; i++) {
+                        botonRestar[i].disabled = true;
+                    }
+
+                } else {
+                    MsgAlerta('CUPON_INVALIDO');
+                }
+
+            })
 
             break;
-
-
 
     }
 

@@ -49,7 +49,7 @@
                         <th><i class="fa-solid fa-hashtag me-1"></i> Cantidad</th>
                         <th><i class="fa-solid fa-dollar-sign me-1"></i> Precio unitario</th>
                         <th><i class="fa-solid fa-calculator me-1"></i> Total</th>
-
+                        <th> Opciones</th>
                     </tr>
                 </thead>
                 <tbody id="carrito">
@@ -69,19 +69,43 @@
                         <th></th>
                         <th id="finalProductos"></th>
                         <th></th>
-                        <td id="finalTotal" class="fw-bold text-success"></td>
+                        <td class="fw-bold text-success">Total final: $ <span id="finalTotal"> 0</span> </td>
                     </tr>
                 </tfoot>
             </table>
         </div>
+        <div id="codigoAplicado">
+        </div>
 
 
+        <div class="container mt-4">
+            <form id="formDescuento" class="row g-2 align-items-center">
+
+                <div class="col-12 col-md-4">
+                    <label for="porcentajeDescuento" class="form-label text-success fw-semibold">
+                        Código de descuento:
+                    </label>
+                </div>
+
+                <div class="col-12 col-md-5">
+                    <input type="text" id="porcentajeDescuento" class="form-control"
+                        placeholder="Ingresá tu código de descuento">
+                </div>
+
+                <div class="col-12 col-md-3 d-grid">
+                    <button type="button" id="btnAplicarDescuento" class="btn btn-primary">
+                        Aplicar descuento
+                    </button>
+                </div>
+
+            </form>
+        </div>
 
 
     </div>
 
-    <footer class="py-4 border-top border-success mt-4">
 
+    <footer class="py-4 border-top border-success mt-4">
 
     </footer>
     <!-- Boton de volver arriba -->

@@ -19,6 +19,10 @@ const TiposMensaje = {
   PRODUCTO_INCREMENTADO: { title: "Notificacion", texto: "Producto incrementado", color: "bg-success" },
   PRODUCTO_DECREMENTADO: { title: "Notificacion", texto: "Producto decrementado", color: "bg-warning" },
   PRODUCTO_ELIMINADO: { title: "Notificacion", texto: "Producto eliminado", color: "bg-danger" },
+
+  //MSG de Cupon
+  CUPON_VALIDO: { title: "Notificacion", texto: "¡Excelente! Cupon aplicado con ¡Exito!", color: "bg-success" },
+  CUPON_INVALIDO: { title: "Notificacion", texto: "Código inexistente", color: "bg-danger" },
 };
 
 

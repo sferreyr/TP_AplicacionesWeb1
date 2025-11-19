@@ -6,7 +6,7 @@ import { getUserData, Logout, getCarrito, getCarritoCount } from "../utils/Sessi
 //document.getElementById("carritoCount").innerText = getCarritoCount();
 
 let cantidadCarrito = getCarritoCount();
-console.log(cantidadCarrito);
+//console.log(cantidadCarrito);
 
 //variable para chequear inicio de sesion
 let isloggedIn = false;
@@ -14,7 +14,7 @@ let isloggedIn = false;
 let emailUser = "";
 
 if (getUserData('UserData')) {
-    console.log("Usuario logueado: " + getUserData('UserData').email);
+    //console.log("Usuario logueado: " + getUserData('UserData').email);
     emailUser = getUserData('UserData').email;
 
     isloggedIn = true;
