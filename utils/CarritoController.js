@@ -274,10 +274,13 @@ export const IncProductoCantidadCarrito = (productos) => {
       carrito = getCarrito() || [];
 
       let producto = productos[i];
+            let productosTotal = 0;
+
       const cantidadElemento = document.getElementsByClassName('quantity');
       const htmlPrecioUnidad = document.getElementsByClassName("price");
       const htmlTotal = document.getElementsByClassName("total"); // total de cada producto
       const htmlFinalTotal = document.getElementById("finalTotal");
+       const htmlProductosFinal = document.getElementById("finalProductos");
 
       let quantity = parseInt(cantidadElemento[i].innerText);
 
@@ -299,18 +302,22 @@ export const IncProductoCantidadCarrito = (productos) => {
         htmlFinalTotal.innerText = suma; //seteamos el valor visualmente
       }
 
-
       //Buscamos en el carrito el producto que ya se encuentre y le sumamos 1
       carrito.forEach(e => {
         if (e.title === producto.title) {
           e.quantity += 1; //sumamos 1 a la cantidad del producto en el carrito
+          
           //actualizamos frontend o interfaz
           if (cantidadElemento[i]) cantidadElemento[i].innerText = e.quantity;
 
          // MsgAlerta('PRODUCTO_INCREMENTADO', producto.title);
         }
+              productosTotal += e.quantity;
       });
 
+          if (htmlProductosFinal) {
+          htmlProductosFinal.innerHTML = productosTotal;
+        }
 
       MsgAlerta('PRODUCTO_INCREMENTADO', producto.title);
       setCarrito(carrito); // Actualizamos el carrito en sessionStorage

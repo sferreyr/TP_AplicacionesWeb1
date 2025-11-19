@@ -207,16 +207,29 @@ window.addEventListener('load', async () => {
                 let htmlCuponT = document.getElementById("porcentajeDescuento");
 
                 let codigoAplicado = document.getElementById("codigoAplicado")
-                
+
                 console.log(htmlCupon);
 
                 if (htmlCupon === cuponValido) {
+                    let sumaBase = 0;
+                    const htmlTotal = document.getElementsByClassName("total");
+
+                    //Itineramos sobre todos los totales de cada producto, le borramos su $, y acumulamos
+                    for (let i = 0; i < htmlTotal.length; i++) {
+                        const valor = parseFloat(
+                            htmlTotal[i].innerText.toString().replace('$', '')
+                        ) || 0;
+                        sumaBase += valor;
+                    }
+
+                    let totalConDescuento = sumaBase - (sumaBase * 10) / 100;
+
 
                     MsgAlerta('CUPON_VALIDO');
                     cuponaplicado = true;
+
                     // aplicamos el descuento y cambiamos visualmente
-                    finalTotal = finalTotal - (finalTotal * 10) /100
-                    htmlFinalTotal.innerText = finalTotal;
+                    htmlFinalTotal.innerText = totalConDescuento;
 
 
                     htmlCuponDescuento.disabled = true; //deshabilitamos el boton
