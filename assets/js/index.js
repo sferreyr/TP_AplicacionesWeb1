@@ -215,8 +215,8 @@ window.addEventListener('load', async () => {
                     MsgAlerta('CUPON_VALIDO');
                     cuponaplicado = true;
                     // aplicamos el descuento y cambiamos visualmente
-                    finalTotal = finalTotal - (finalTotal * 0.10)
-                    htmlFinalTotal.innerHTML = finalTotal;
+                    finalTotal = finalTotal - (finalTotal * 10) /100
+                    htmlFinalTotal.innerText = finalTotal;
 
 
                     htmlCuponDescuento.disabled = true; //deshabilitamos el boton

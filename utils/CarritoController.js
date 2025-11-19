@@ -360,7 +360,7 @@ export const RestProductoCantidadCarrito = (productos) => {
           suma += valor;
         }
         if (htmlFinalTotal) {
-          htmlFinalTotal.innerText = "$" + suma;
+          htmlFinalTotal.innerText =  suma;
         }
 
         if (htmlProductosFinal) {
